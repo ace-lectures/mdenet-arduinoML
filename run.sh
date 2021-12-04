@@ -3,7 +3,7 @@
 # start the containerized environment
 docker run --rm -it -p 8080:8080 --name arduinoml \
         -v `pwd`/steps:/tutorial \
-        -d acedesign:mdenet_arduinoML 
+        -d acedesign/arduinoml 
 
 echo
 echo "==>> http://localhost:8080/?folder=/tutorial"
