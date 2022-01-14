@@ -54,7 +54,7 @@ export DUDE = $(AVRDUDE_PATH)/avrdude -F -v -p $(MCU) $(AVRDUDECONF)
 all: $(TARGET).hex
 
 $(LUSTRE_MAINNODE).o: $(LUSTRE_SRC)
-	lus2c $^ $(LUSTRE_MAINNODE)
+	bash `which lus2c` $^ $(LUSTRE_MAINNODE)
 	$(CC) -c $(CPPFLAGS) $(CFLAGS) $(LUSTRE_MAINNODE).c -o $(LUSTRE_MAINNODE).o
 
 %.o:%.c

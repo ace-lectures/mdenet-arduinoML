@@ -19,17 +19,11 @@ export LUSTRE_INSTALL="$(pwd)"
 cd $OLD
 export PS1="\[\e[0m\]## LUSTRE ## \[\e[0m\]\W\[\e[0m\]$\[\e[0m\] "
 echo "############################################################
-Some Examples
-   cd $LUSTRE_INSTALL/examples/     # Official Lustre tests
-   # Simulate a node
-   luciole filename.lus node
-   # Compile (see the provided makefile)
-############################################################
-For the arduino led
+Example:
    cd $(pwd)/LustreArduino
-   make all upload
+   make all
 ############################################################
-If you quit this shell, you quit the Lustre environment.
+Use `exit` to quit this shell, and the Lustre environment
 ############################################################
 "
 
