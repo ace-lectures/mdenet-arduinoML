@@ -7,8 +7,8 @@ FROM ubuntu:focal
 
 RUN apt-get update && apt-get install -y curl
 WORKDIR /codeserver 
-RUN curl -fOL https://github.com/cdr/code-server/releases/download/v3.12.0/code-server_3.12.0_amd64.deb
-RUN dpkg -i code-server_3.12.0_amd64.deb
+RUN curl -fOL https://github.com/coder/code-server/releases/download/v4.0.1/code-server_4.0.1_amd64.deb
+RUN dpkg -i code-server_4.0.1_amd64.deb
 COPY ./code_server.yml  /root/.config/code-server/config.yaml
 
 ###
@@ -22,7 +22,10 @@ RUN apt-get update && apt-get install -y make arduino-core gcc-avr avrdude avr-l
 RUN apt-get update && apt-get install -y maven 
 
 # Lustre
+WORKDIR /lustre
 RUN apt-get update && apt-get install -y wget tcl
+COPY ./lustre_install.sh .
+RUN ./lustre_install.sh
 
 ###
 # Operational concerns
